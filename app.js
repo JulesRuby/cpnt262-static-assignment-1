@@ -2,10 +2,17 @@
 const path = require('path');
 const express = require('express');
 const ejs = require('ejs');
+const moment = require('moment');
 // Establish my personal modules
 const pageAttributes = require('./pageAttributes')
 
+const dateYear = "YYYY";
+
 const app = express();
+
+app.locals.moment = require('moment');
+app.locals.dateYear = dateYear;
+// console.log(moment().format(dateYear));
 
 // Define the 'view engine' that we'll be using. In this case it will be ejs, but it could be something like pug or handlebars
 app.set('view engine', 'ejs');
